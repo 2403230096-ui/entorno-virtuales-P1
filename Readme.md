@@ -1,0 +1,1 @@
+En este commit implementamos el HUD y un sistema de puntos que jalamos desde gamemanager, y cambie el sonido de la moneda por un pedo

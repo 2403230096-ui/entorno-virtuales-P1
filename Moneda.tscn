@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvlq2u36njb4b"]
+
+[ext_resource type="Script" uid="uid://dvi458uxn3dig" path="res://moneda.gd" id="1_k7ceu"]
+
+[sub_resource type="Gradient" id="Gradient_slh8x"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ibgxo"]
+gradient = SubResource("Gradient_slh8x")
+fill_from = Vector2(0.76293105, 0.13146552)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_phr2m"]
+albedo_color = Color(0.96076965, 0.9254761, 0, 1)
+albedo_texture = SubResource("GradientTexture2D_ibgxo")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2ig4m"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fkad0"]
+height = 0.11230469
+
+[node name="Area3D" type="Area3D" groups=["Coleccionables"]]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.23740745, 0, 0, 0)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_k7ceu")
+speed = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -2.3696651e-09, -1, 0, 0.05421162, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_phr2m")
+mesh = SubResource("CylinderMesh_2ig4m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.0014216155, 0.008296788)
+shape = SubResource("CylinderShape3D_fkad0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4mhis5c34r0"]
+
+<<<<<<< HEAD
+[ext_resource type="Script" uid="uid://hb065f31ni3l" path="res://player_body.gd" id="1_qsany"]
+=======
+[ext_resource type="Script" uid="uid://ds3rqyiang8as" path="res://player_body.gd" id="1_qsany"]
+>>>>>>> 9b1a5ad8d6fb50892bee832689b301061523bacf
+
+[sub_resource type="SphereMesh" id="SphereMesh_4xowi"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_a202f"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qsany"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qsany"]
+
+[node name="RigidBody3D" type="RigidBody3D" groups=["Player"]]
+transform = Transform3D(0.9999999, 0, 0.0004537856, 0, 1, 0, -0.0004537856, 0, 0.9999999, 0, 1.6778146, 0)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_qsany")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_4xowi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_a202f")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+<<<<<<< HEAD
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 2, 2)
+=======
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 1.9999999, 2.0000002)
+>>>>>>> 9b1a5ad8d6fb50892bee832689b301061523bacf
+shape = SubResource("SphereShape3D_qsany")
+spring_length = 20.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+<<<<<<< HEAD
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -0.07674785, -0.29019833, 5.4466224)
+current = true
+fov = 43.39052
+=======
+current = true
+fov = 43.3
+>>>>>>> 9b1a5ad8d6fb50892bee832689b301061523bacf
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.98118144, 0, 0, 0, 1.0178896, 0, 5.820766e-11, 0, 0.02437695, 0, 0, 0)
+mesh = SubResource("BoxMesh_qsany")

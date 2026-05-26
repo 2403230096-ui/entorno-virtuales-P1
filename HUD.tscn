@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://7hjcdkf5onkb"]
+
+[ext_resource type="Script" uid="uid://cxkeah4soyj6r" path="res://hud.gd" id="1_k5de2"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1603815932]
+script = ExtResource("1_k5de2")
+
+[node name="Control" type="Control" parent="." unique_id=2141905203]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=2014484292]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Score" type="Label" parent="Control/MarginContainer" unique_id=2008741873]
+layout_mode = 2
+text = "Score: 0"

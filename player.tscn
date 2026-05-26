@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://iefss0ujihnh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4xowi"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_a202f"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_4xowi")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.10000002, 0, 0, 0, 0.097963504, 0.02007873, 0, -0.02007873, 0.097963504, 0, 0.8048034, 2.925877)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_a202f")

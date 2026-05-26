@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4h884xb0twcl"]
+
+[ext_resource type="Script" uid="uid://cet51jvv3qtg1" path="res://gamemanager.gd" id="1_cikgk"]
+[ext_resource type="AudioStream" uid="uid://x0l5srp2gkww" path="res://Pickup_Coin12.ogg" id="1_rosyn"]
+
+[node name="Gamemanager" type="Node"]
+script = ExtResource("1_cikgk")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_rosyn")
+volume_db = 5.0
+unit_size = 9.99
+max_db = 1.932
+autoplay = true

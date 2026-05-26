@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch1ograo8g0uj"]
+
+[ext_resource type="Script" uid="uid://6ve1kd7mwwe" path="res://Escenas/player.gd" id="1_cnkc8"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_eqas1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6lbni"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q3fpc"]
+
+[node name="Player" type="RigidBody3D" groups=["Colector"]]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_cnkc8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.85328704, -0.5214382, 0.0019020783, 0.5214382, 0.853289, 0.0005351657, -0.0019020782, 0.0005351658, 0.9999981, 0, 0, 0)
+mesh = SubResource("SphereMesh_eqas1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_6lbni")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.7619455, 0.64764136, 0, -0.64764136, 0.7619455, 0, 0.02580762, 0)
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 0.9447029, -0.32792696, 0, 0.32792696, 0.9447029, 0, -1.1036329, 2.7991138)
+fov = 100.6
+far = 3996.33
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.20302868, 0, 0, 0, 1, 0, 0, 0, 0.19922549, -0.01420109, 0.0060931444, 0)
+mesh = SubResource("BoxMesh_q3fpc")
